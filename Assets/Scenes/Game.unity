@@ -243,6 +243,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startHealth: 100
+  onTakeDamageEffect: {fileID: 4298161324583696211, guid: 8c74ad844d1fc2a448bd069ee34cf424,
+    type: 3}
+  onDeadEffect: {fileID: 2709344225082569473, guid: 84be5924051e6e54aa4c69c63354f21b,
+    type: 3}
 --- !u!114 &177684047 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2512387470528047718, guid: 48cb3fb68c91eb94999fd99957eb0cae,
@@ -507,7 +511,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 1.101}
-  m_SizeDelta: {x: 1, y: 0.2}
+  m_SizeDelta: {x: 1, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &580939553
 MonoBehaviour:

@@ -13,6 +13,10 @@ public class HealthBar : MonoBehaviour
         _health.onHealthChange += UpdateHealthBar;
         _health.onDead += OnDead;
     }
+    private void Update()
+    {
+        _healthBar.transform.LookAt(Camera.main.transform);
+    }
     private void OnDestroy()
     {
         _health.onHealthChange -= UpdateHealthBar;
