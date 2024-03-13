@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class SimpleEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private EnemyManager manager;
+    [SerializeField] private float movementSpeed;
 
-    // Update is called once per frame
-    void Update()
+    private Vector3 targetPosition;
+    private void Start()
     {
-        
+        targetPosition = manager.GetRandomPosition();
+    }
+    private void Update()
+    {
+        if(transform.position != targetPosition)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
+        }
+        else
+        {
+            targetPosition = manager.GetRandomPosition();
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(targetPosition, 0.1f);
     }
 }

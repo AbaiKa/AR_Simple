@@ -16,6 +16,10 @@ public class Weapon : MonoBehaviour
     {
         TouchManager.Instance.onClickToTarget += Shoot;
     }
+    private void OnDestroy()
+    {
+        TouchManager.Instance.onClickToTarget -= Shoot;
+    }
     private void Shoot(Vector3 target)
     {
         Instantiate(_bulletPrefab, _firePoint.position, Quaternion.identity).Init(_bulletSpeed, _damage, target, _bulletDestroyTime);
